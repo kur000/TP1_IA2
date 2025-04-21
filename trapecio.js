@@ -1,8 +1,9 @@
 let colores = ['#e21b1b', '#f2d52e', '#2a3b8e', '#eeeeee', '#999999', '#111111'];
 
+
+
 class Trapecio{
     constructor() {
-        this.pos = createVector(random(width), random(height)); // creamos un vector para randomizar el origen de los objetos trapecio creados
 
         //coordenadas x del trapecio
         this.x1 = 0;
@@ -16,20 +17,22 @@ class Trapecio{
         this.y4 = 0;
         //relleno random (dentro del array colores) para cada trapecio
         this.relleno = random(colores);
+        //valor randomizado que usaremos como booleano para rotar algunos trapecios
         this.isVertical = random() < .5;
+        // creamos un vector para randomizar el origen de los objetos trapecio creados
+        this.pos = createVector(random(width), random(height)); 
         
     }
 
     dibujar(){
         fill(this.relleno);
         push();
-        
         if (this.isVertical) {
             //trasladamos y rotamos el origen de coordenadas del objeto
             translate(this.pos.x,this.pos.y);
             rotate(HALF_PI)            
         }
-
+        //dibujamos el trapecio
         beginShape();
         vertex(this.x1, this.y1);
         vertex(this.x2, this.y2);
