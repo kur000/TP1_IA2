@@ -1,4 +1,4 @@
-let colors = ['#e21b1b', '#f2d52e', '#2a3b8e', '#eeeeee', '#999999', '#111111'];
+let colores = ['#e21b1b', '#f2d52e', '#2a3b8e', '#eeeeee', '#999999', '#111111'];
 
 class Trapecio{
     constructor() {
@@ -14,8 +14,8 @@ class Trapecio{
         this.y2 = random(1250, 300);
         this.y3 = this.y2 + random(3);
         this.y4 = 0;
-        //relleno random (dentro del array colors) para cada trapecio
-        this.relleno = random(colors);
+        //relleno random (dentro del array colores) para cada trapecio
+        this.relleno = random(colores);
         this.isVertical = random() < .5;
         
     }
@@ -42,4 +42,11 @@ class Trapecio{
     info(){
         console.log(this.isVertical);
     }
+
+    cambiarColor(){
+        //prueba de cambio de posicion
+        this.pos = createVector(random(width), random(height)); 
+        this.relleno = random(colores);
+    }
+    
 }
